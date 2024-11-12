@@ -81,5 +81,8 @@ crashlytics-build.properties
 .DS_Store
 **/.DS_Store
 
-# my ignore
-/Assets/assets/
+# mi ignora
+/Assets/anim/
+/Assets/arts/
+/Assets/prefab/
+/Assets/Scenes/
