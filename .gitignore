@@ -83,3 +83,6 @@ crashlytics-build.properties
 
 # my ignore
 /Assets/assets/
+/Assets/arts/
+/Assets/anim/
+/Assets/prefab/
