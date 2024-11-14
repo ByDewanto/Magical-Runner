@@ -16,5 +16,6 @@ public class buildingmov : MonoBehaviour
     void Update()
     {
         building.velocity = new Vector2(-speed, building.velocity.y);
+        Destroy(gameObject, 10f);
     }
 }

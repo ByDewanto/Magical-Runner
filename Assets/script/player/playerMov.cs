@@ -3,8 +3,11 @@ using UnityEngine;
 public class playerMov : MonoBehaviour
 {
     private float speed = 10f;
-    private float jumpForce = 10f;
+    private float jumpForce = 40f;
     private Rigidbody2D rb;
+    public Transform groundCheck;
+    
+    private int groundCount;
 
     // Start is called before the first frame update
     private void Awake() {
@@ -20,9 +23,16 @@ public class playerMov : MonoBehaviour
         rb.velocity = new Vector2(movement.x * speed, rb.velocity.y);
         
         // Jump
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && groundCount > 0)
         {
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+            groundCount--;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other) {
+        if (other.gameObject.CompareTag("ground")){
+            groundCount = 2;
         }
     }
 }
