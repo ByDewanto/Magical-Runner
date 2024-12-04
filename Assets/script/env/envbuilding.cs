@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class envbuilding : MonoBehaviour
 {
+    public publicScript publicScript;
     public GameObject b01;
     public GameObject b02;
     public GameObject b03;
@@ -25,16 +26,12 @@ public class envbuilding : MonoBehaviour
     {
         GameObject[] buildings = {b01, b02, b03, b04, b05};
         while (true){
-            Vector2 spawn = new Vector2 (18, y_range[randomNumberGenerator(y_range.Length)]);
+            Vector2 spawn = new Vector2 (18, y_range[publicScript.randomNumberGenerator(y_range.Length)]);
             // Instantiate the prefab at the position of the spawner (this object)
-            Instantiate(buildings[randomNumberGenerator(buildings.Length)], spawn, Quaternion.identity);
+            Instantiate(buildings[publicScript.randomNumberGenerator(buildings.Length)], spawn, Quaternion.identity);
 
             // Wait for the specified delay before spawning the next prefab
             yield return new WaitForSeconds(spawnDelayBuilding);
         }
-    }
-
-    private int randomNumberGenerator(int length){
-        return Random.Range(0, length);
     }
 }
