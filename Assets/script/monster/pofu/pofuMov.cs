@@ -1,7 +1,6 @@
-using UnityEditor.Rendering;
 using UnityEngine;
 
-public class pofu : MonoBehaviour
+public class pofuMov : MonoBehaviour
 {
     private float speedHorizontal = 1.4f;
     private float speedVertical = 4f;

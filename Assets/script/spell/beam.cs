@@ -9,5 +9,6 @@ public class beam : MonoBehaviour
     }
     private void Update() {
         beamSpell.velocity = new Vector2 (speed, beamSpell.velocity.y);
+        Destroy(gameObject, 6f);
     }
 }
