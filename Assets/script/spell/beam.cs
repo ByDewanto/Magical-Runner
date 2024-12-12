@@ -11,4 +11,8 @@ public class beam : MonoBehaviour
         beamSpell.velocity = new Vector2 (speed, beamSpell.velocity.y);
         Destroy(gameObject, 6f);
     }
+
+    private void OnCollisionEnter2D(Collision2D other) {
+        Destroy(gameObject);
+    }
 }
